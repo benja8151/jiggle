@@ -85,6 +85,12 @@ class _JiggleState extends State<Jiggle> with SingleTickerProviderStateMixin {
     });
   }
 
+  @override
+  void dispose() {
+    _jiggleAnimationController.dispose();
+    super.dispose();
+  }
+
   void _onLongPress() {
     if (widget.useGestures) widget.jiggleController.toggle();
   }
